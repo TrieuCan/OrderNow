@@ -1,2 +1,0 @@
-# OrderNow
-App Bán Hàng

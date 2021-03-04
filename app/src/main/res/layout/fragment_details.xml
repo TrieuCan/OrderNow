@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?><!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
+
+<!--    <data>-->
+
+<!--        <variable-->
+<!--            name="detailViewHodel"-->
+<!--            type="com.example.myapplication2.fragment.detailproduct.DetailViewModel" />-->
+<!--    </data>-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/custom_image"
+                android:padding="8dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/iv_cart"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/custom_image"
+                android:padding="8dp"
+                android:src="@drawable/ic_shopping_cart"
+                app:tint="@color/white" />
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <ViewFlipper
+                    android:id="@+id/view_flipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp" />
+
+                <TextView
+                    android:id="@+id/tv_detail_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center|left"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/tv_detail_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:textColor="@color/orange"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_price_sale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/tv_detail_price"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                    <!--            tv.setPaintFlags(tv.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);-->
+                    <TextView
+                        android:id="@+id/tv_dmsp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_detail_price"
+                        android:layout_marginTop="15dp"
+                        android:text="Danh mục sản phẩm: "
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_detail_price"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_toRightOf="@id/tv_dmsp"
+                        android:gravity="center|left"
+                        android:text="@{detailViewHodel.type}"
+                        android:textSize="18dp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tv_cmsp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_dmsp"
+                        android:layout_marginTop="15dp"
+                        android:text="Chọn màu sản phẩm "
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@id/tv_cmsp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTintMode="multiply" />
+
+                    <TextView
+                        android:id="@+id/tv_tcsp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/spinner"
+                        android:layout_marginTop="15dp"
+                        android:text="Tùy chọn sản phẩm "
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_tcsp"
+                        android:layout_marginTop="10dp"
+                        android:checked="true"
+                        android:text="Size" />
+
+                    <Spinner
+                        android:id="@+id/spinner_size"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@id/tv_tcsp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@id/checkbox_id"
+                        android:backgroundTintMode="multiply" />
+
+                    <TextView
+                        android:id="@+id/tv_chitiet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/spinner_size"
+                        android:layout_marginTop="15dp"
+                        android:text="Chi tiết "
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Sản phẩm tương tự"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_same"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Notes"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/edt_notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/white_sliver"
+                    android:gravity="top"
+                    android:hint="Write Notes"
+                    android:padding="5dp"
+                    android:textColorHint="@color/silver" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom"
+            android:background="@color/silver"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                android:id="@+id/elegantNumberButton"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                app:finalNumber="10"
+                app:initialNumber="1" />
+
+            <Button
+                android:id="@+id/bt_add_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/custom_image"
+                android:text="Thêm vào giỏ hàng 200000" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</LinearLayout><!--</layout>-->
